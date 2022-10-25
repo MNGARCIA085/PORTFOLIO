@@ -1,0 +1,47 @@
+
+
+
+<input class="form-control" type="text"
+    placeholder="search"
+    [(ngModel)]="termino"
+    (input)="buscar()">
+
+
+<br>
+
+<div class="card" style="width: 18rem;"
+            *ngFor="let curso of cursosFiltrados">
+
+
+            <div class="row">
+
+            <!--<img src="..." class="card-img-top" alt="...">-->
+
+
+            
+
+            <div class="card-body">
+              <h5 class="card-title">{{ curso }}</h5>
+              <p class="card-text">Some quick example text e card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+
+          
+
+
+          </div>
+
+  </div>
+
+
+
+
+
+  
+
+
+
+
+
+
+
