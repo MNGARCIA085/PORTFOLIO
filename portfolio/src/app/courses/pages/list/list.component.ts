@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { debounce, debounceTime } from 'rxjs';
+import { Course } from '../../interfaces/courses.interfaces';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
   selector: 'app-list',
@@ -8,23 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
 
-  cursos: string[] = ['angular','react','node'];
-
-  cursosFiltrados: string[] = this.cursos;
-
 
   termino: string = '';
+  courses: Course[] = [];
+  filteredCourses: Course[] = [];
 
-  constructor() { }
+  constructor(private coursesService: CoursesService) { }
+
 
   ngOnInit(): void {
+    this.coursesService.getCourses().subscribe(resp => this.filteredCourses = resp);
   }
 
 
   buscar(){
-    console.log(this.termino);
-    this.cursosFiltrados = ['dsfdsfs'];
-
+    this.coursesService.getCourses(this.termino)
+        .subscribe(resp => {this.filteredCourses = resp});
   }
 
 
