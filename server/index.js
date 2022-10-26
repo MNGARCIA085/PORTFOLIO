@@ -1,20 +1,31 @@
-const express = require('express')
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config(); // vars. de entorno
+const { dbConnection } = require('./db/config');
  
+
 // crear el servidor/app de express
 const app = express();
  
-// get; lo pruebo en localhost:4000
-app.get('/', (req,res) => {
-   console.log('petición al slash');
-   res.status(200).json({
-       ok:true,
-       msg:'Todo ok',
-       udi:1234
-   })
-})
+ 
+// CORS
+app.use(cors());
+
+// para lectura y parseo del body
+app.use(express.json());
+
+
+// rutas
+app.use('/api/courses', require('./routes/courses'));
+
+
+
+//
+dbConnection();
+
  
  
 //
 app.listen(4000, () => {
-   console.log(`Escuchando en el puerto ${4000}`)
+   console.log(`Escuchando en el puerto ${ process.env.PORT }`)
 })
