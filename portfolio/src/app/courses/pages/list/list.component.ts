@@ -3,6 +3,7 @@ import { debounce, debounceTime } from 'rxjs';
 import { Course } from '../../interfaces/courses.interfaces';
 import { CoursesService } from '../../services/courses.service';
 
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',

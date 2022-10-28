@@ -1,10 +1,69 @@
+<mat-sidenav-container fullscreen>
+
+
+  <mat-sidenav #sidenav mode="push">
+
+      <mat-toolbar color="primary">
+          <span>MENU</span>
+          <span class="spacer"></span>
+          <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+          </button>
+      </mat-toolbar>
+
+      <mat-nav-list>
+          <a routerLink="./courses"
+                          mat-list-item
+                          (click)="sidenav.toggle()">
+              <mat-icon mat-list-icon>label</mat-icon>
+              <span>Courses</span>
+          </a>
+      </mat-nav-list>
+
+
+
+      <mat-nav-list>
+          <a routerLink="./about"
+                          mat-list-item
+                          (click)="sidenav.toggle()">
+              <mat-icon mat-list-icon>search</mat-icon>
+              <span>About me</span>
+          </a>
+      </mat-nav-list>
+
+
+  </mat-sidenav>
+
+  <mat-toolbar>
+      <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+      </button>
+
+      <!---
+      <span class="spacer"></span>
+      <button mat-button >  (click)
+          <span> Usuario</span>
+          Logout
+      </button>
+    -->
+
+  </mat-toolbar>
+
+
+      <div class="container">
+          <router-outlet></router-outlet>
+      </div>
+
+
+  </mat-sidenav-container>
 
 
 
 
+
+  <!--
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
-    
     <button class="navbar-toggler" type="button" data-toggle="collapse" 
     data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
     aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +76,5 @@
         <a class="nav-item nav-link" [routerLink]="['/about']">About</a>
       </div>
     </div>
-  
-
 </nav>
+-->

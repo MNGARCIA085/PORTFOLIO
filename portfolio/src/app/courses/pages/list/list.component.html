@@ -1,21 +1,62 @@
+<br>
+<div class="text-center">
+    <h1> COURSES </h1>
+</div>
 
 
-
-<input class="form-control" type="text"
-    placeholder="search"
-    [(ngModel)]="termino"
-    (input)="buscar()">
+<mat-divider></mat-divider>
 
 
 <br>
 
 
+<div class="d-flex justify-content-between">
+  <div>
+     
+  </div>
+  <div>
+    <div class="row">
+      <div class="col">
+          <input class="form-control pull-right" type="text"
+            placeholder="search"
+            [(ngModel)]="termino"
+            (input)="buscar()"
+          >
+      </div>
+    </div>
+  </div>
+</div>
 
 
-      <div class="card" style="width: 18rem;"
+
+<br>
+
+<br>
+
+<div fxLayout="row wrap"
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="20px">
+    
+    <div  *ngFor="let course of filteredCourses"
+                fxFlex="20"
+                fxFlex.lg="15"
+                fxFlx.sm="30">
+
+         <!-- pongo el componente tarjeta pasándole el curso-->
+         <app-course-card [course]="course"></app-course-card>
+
+
+    </div>
+</div>
+
+
+
+<!--
+      <div style="width: 18rem;" class="card col-md-3" 
             *ngFor="let course of filteredCourses">
                 <div class="row">
-                  <!--<img src="..." class="card-img-top" alt="...">-->
+                  <img src="..." class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">{{ course.title }}</h5>
                     <p class="card-text">Some quick example text e card's content.</p>
@@ -23,9 +64,14 @@
                   </div>
               </div>
       </div>
+-->
 
 
 
+
+
+
+ 
 
 
 <!--

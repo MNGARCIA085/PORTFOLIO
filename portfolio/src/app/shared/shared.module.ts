@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { RouterModule } from '@angular/router';
 
+import { MaterialModule } from '../material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule,
+    FlexLayoutModule
   ],
   exports: [
     SidemenuComponent
