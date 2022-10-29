@@ -12,7 +12,8 @@ const listCourses = async (req, res) => {
 
     if (req.query.title){
         //query = {'title':/req.query.title/}
-        query = { title: { $regex: req.query.title } };
+        //({userName:{ $regex: userName, $options:'i' } })
+        query = { title: { $regex: req.query.title, $options:'i' } };
     }
     else {
         query = {}
