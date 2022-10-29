@@ -4,7 +4,7 @@
 </div>
 
 
-<mat-divider></mat-divider>
+
 
 
 <br>
@@ -14,7 +14,11 @@
   <div>
      
   </div>
+  
+  
   <div>
+    
+    <!--
     <div class="row">
       <div class="col">
           <input class="form-control pull-right" type="text"
@@ -24,6 +28,23 @@
           >
       </div>
     </div>
+  -->
+
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        placeholder="search"
+        class="form-control"
+        id="searchQuery"
+        (input)="onSearchQueryInput($event)"
+      />
+    </div>
+  </div>
+  
+  
+  
+  
   </div>
 </div>
 
@@ -31,17 +52,26 @@
 
 <br>
 
+
+
+
+
+
+
+
+
 <br>
 
 <div fxLayout="row wrap"
       fxLayout.xs="column"
       fxLayoutAlign="center"
-      fxLayoutGap="20px">
+      fxLayoutGap="20px"
+      >
     
     <div  *ngFor="let course of filteredCourses"
-                fxFlex="20"
-                fxFlex.lg="15"
-                fxFlx.sm="30">
+      fxFlex="30"
+      fxFlex.lg="15"
+      fxFlx.sm="25">
 
          <!-- pongo el componente tarjeta pasándole el curso-->
          <app-course-card [course]="course"></app-course-card>
@@ -49,6 +79,11 @@
 
     </div>
 </div>
+
+
+
+
+
 
 
 
@@ -91,6 +126,9 @@
 
 
   
+
+
+
 
 
 

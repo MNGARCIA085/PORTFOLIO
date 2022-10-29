@@ -12,7 +12,18 @@ import { CoursesService } from '../../services/courses.service';
 export class DetailComponent implements OnInit {
 
 
-  course!: Course;
+  course: Course[] = [];
+
+  title:string = '';
+  description:string = '';
+  certificate:string = '';
+  link:string = '';
+  instructor:string = '';
+  repo:string[] = [];
+  // image URL
+  image:string = '';
+
+
 
   constructor(private activatedRoute: ActivatedRoute,
               private courseService: CoursesService,
@@ -26,8 +37,14 @@ export class DetailComponent implements OnInit {
       .subscribe(course => {
               console.log(course);
               this.course = course;
-              console.log(course.certificate);
-              console.log(typeof(course));
+
+              this.title = course[0].title;
+              this.instructor = course[0].instructor;
+              this.description = course[0].description;
+              this.link = course[0].link;
+              this.certificate = course[0].certificate;
+              this.repo = course[0].repo;
+              this.image = course[0].image;
             }  
           )
   }

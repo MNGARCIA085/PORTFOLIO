@@ -4,10 +4,11 @@ import { CoursesRoutingModule } from './courses-routing.module';
 import { ListComponent } from './pages/list/list.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { CourseCardComponent } from './components/course-card/course-card.component';
+
 
 
 

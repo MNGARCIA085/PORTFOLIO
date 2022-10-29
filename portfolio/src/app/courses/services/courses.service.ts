@@ -27,9 +27,9 @@ export class CoursesService {
 
 
   // devuelve un curso
-  getCourse(id:string):Observable<Course>{
+  getCourse(id:string):Observable<Course[]>{
     const url = `${this._baseUrl}/api/courses/${id}`;
-    return this.http.get<Course>(url);
+    return this.http.get<Course[]>(url);
   }
 
 

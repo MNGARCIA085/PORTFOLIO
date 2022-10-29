@@ -4,7 +4,12 @@ import { Course } from '../../interfaces/courses.interfaces';
 @Component({
   selector: 'app-course-card',
   templateUrl: './course-card.component.html',
-  styleUrls: ['./course-card.component.css']
+  styles: [`
+  imgs {
+    height: 50px;
+    width: 50px;
+  }
+  `]
 })
 export class CourseCardComponent implements OnInit {
 
