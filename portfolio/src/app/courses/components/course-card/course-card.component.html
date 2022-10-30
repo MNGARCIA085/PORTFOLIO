@@ -2,14 +2,14 @@
 <mat-card>
 
     <mat-card-header>
-        <mat-card-title>{{course.title | uppercase }}</mat-card-title>
+        <mat-card-title>{{course.title | slice:0:60 }}</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
     </mat-card-header>
 
     <br>
 
     <!--imagen-->
-    <img src={{course.image}} title="image" height="100px"/>
+    <img src={{course.image}} title="image" height="100px" />
 
 
     <br> <br>
