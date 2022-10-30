@@ -32,6 +32,10 @@ export class CoursesService {
     return this.http.get<Course[]>(url);
   }
 
+  addCourse(course:Course):Observable<Course>{
+    return this.http.post<Course>(`${this._baseUrl}/api/courses`,course)
+  }
+
 
   
 

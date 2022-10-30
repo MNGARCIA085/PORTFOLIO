@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { CourseCardComponent } from './components/course-card/course-card.component';
+import { AddComponent } from './pages/add/add.component';
 
 
 
@@ -16,7 +17,8 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
   declarations: [
     ListComponent,
     DetailComponent,
-    CourseCardComponent
+    CourseCardComponent,
+    AddComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
     RouterModule,
     FormsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class CoursesModule { }
