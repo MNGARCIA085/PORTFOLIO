@@ -67,11 +67,44 @@ const courseDetail = async (req, res) => {
 }
 
 
+// edit a course
+const editCourse = async (req, res) => {
+    try {
+        const courseId = mongoose.Types.ObjectId(req.params.id);
+        const filter = {'_id':courseId};
+        const course = await Course.findOneAndUpdate(filter,req.body);
+        return res.status(201).json(course);
+        //return res.status(201).json({'id':courseId});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error:error});
+    }
+}
+
+
+// delete a course
+const deleteCourse = async (req, res) => {
+    try {
+        const courseId = mongoose.Types.ObjectId(req.params.id);
+        const course = await Course.deleteOne({"_id":courseId});
+        //return res.status(200).json(course);
+        return res.status(200).json({'id':courseId});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error:error});
+    }
+}
+
+
+
+
  
 
 // exportamos
 module.exports = {
    listCourses,
    addCourse,
-   courseDetail
+   courseDetail,
+   editCourse,
+   deleteCourse
 }

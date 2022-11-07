@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { listCourses, addCourse, courseDetail } = require('../controllers/courses');
+const { listCourses, addCourse, courseDetail, editCourse, deleteCourse } = require('../controllers/courses');
 
 
 const router = Router();
@@ -14,6 +14,14 @@ router.post('/',addCourse);
 
 // un curso
 router.get('/:id',courseDetail);
+
+
+// editar un curso
+router.put('/:id',editCourse);
+
+
+// borrar un curso
+router.delete('/:id',deleteCourse);
 
 
 
