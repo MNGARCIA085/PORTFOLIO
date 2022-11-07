@@ -32,15 +32,25 @@ export class CoursesService {
     return this.http.get<Course[]>(url);
   }
 
+  // agrego un curso
   addCourse(course:Course):Observable<Course>{
     return this.http.post<Course>(`${this._baseUrl}/api/courses`,course)
   }
 
 
-  
+  // delete a course
+  deleteCourse(id:string):Observable<string>{
+    const url = `${this._baseUrl}/api/courses/${id}`;
+    return this.http.delete<string>(url);
+  }
 
-  
 
+  // edito un curso
+  editCourse(course:Course):Observable<string>{
+    console.log(course);
+    const url = `${this._baseUrl}/api/courses/${course._id}`;
+    return this.http.put<string>(url,course);
+  }
 
 
 }

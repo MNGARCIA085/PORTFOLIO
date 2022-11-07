@@ -9,6 +9,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { AddComponent } from './pages/add/add.component';
+import { EditComponent } from './pages/edit/edit.component';
+import { DeleteComponent } from './pages/delete/delete.component';
 
 
 
@@ -18,7 +20,9 @@ import { AddComponent } from './pages/add/add.component';
     ListComponent,
     DetailComponent,
     CourseCardComponent,
-    AddComponent
+    AddComponent,
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     CommonModule,

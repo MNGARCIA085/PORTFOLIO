@@ -37,7 +37,6 @@ export class DetailComponent implements OnInit {
       .subscribe(course => {
               console.log(course);
               this.course = course;
-
               this.title = course[0].title;
               this.instructor = course[0].instructor;
               this.description = course[0].description;

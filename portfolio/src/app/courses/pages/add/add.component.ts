@@ -12,8 +12,6 @@ import { CoursesService } from '../../services/courses.service';
 export class AddComponent implements OnInit {
 
 
-  
-
   miFormulario: FormGroup = this.fb.group({
     title: ['sdfd'],
     certificate: ['sdfd'],
