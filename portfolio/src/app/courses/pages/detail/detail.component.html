@@ -47,11 +47,15 @@
         
         <br>
         
+
+
+        <div *ngIf="repo.length > 0">
+          <h3> <b>REPO</b></h3>
+          <p *ngFor="let r of repo">
+              <a href="{{r}}" target="blanck_3">{{r}}</a>
+          </p>
+        </div>
         
-        <h3> <b>REPO</b></h3>
-        <p *ngFor="let r of repo">
-            <a href="{{r}}" target="blanck_3">{{r}}</a>
-        </p>
 
 
       </div>
